@@ -1,0 +1,17 @@
+@startuml
+
+create Amende
+":smartphone" -> Amende:
+
+":smartphone" -> ":commisariat": enregister()
+
+":commisariat" ->> ":statcommisariat" : incrementer
+
+
+":commisariat" -> ":statcommisariat" : consulter
+activate ":statcommisariat"
+":statcommisariat" -> ":commisariat" :
+deactivate ":statcommisariat"
+
+
+@enduml

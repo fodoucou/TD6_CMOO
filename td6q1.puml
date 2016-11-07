@@ -1,0 +1,20 @@
+@startuml
+":Testeur" -> ":Accueil": Accueillir(nom,prenom)
+activate ":Accueil"
+
+create Dossier
+
+":Accueil" -> Dossier :
+
+":Accueil" -> ":Medecin": Consultation dossier(Dossier d)
+
+activate ":Medecin"
+
+":Medecin"-> ":Accueil": Retour dossier(Dossier d)
+
+deactivate ":Medecin"
+
+":Accueil"-> ":Testeur": Retour dossier(Dossier d)
+
+deactivate ":Accueil"
+@enduml
